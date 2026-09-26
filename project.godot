@@ -11,13 +11,21 @@ config_version=5
 [application]
 
 config/name="jozygallgam"
+run/main_scene="uid://bbshki3q8ludl"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*uid://c0xyjchsyeigq"
+SceneManager="*uid://b0k8j2frp7xwp"
+
 [display]
 
-window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
+window/size/viewport_width=360
+window/size/viewport_height=240
+window/stretch/mode="viewport"
+window/stretch/aspect="keep_height"
 
 [physics]
 
@@ -25,4 +33,5 @@ window/stretch/aspect="expand"
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"

@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://dcon1nh4f4kqm"]
+
+[ext_resource type="Texture2D" uid="uid://dgbsrud3r3jsw" path="res://art/temp_alien_hand.png" id="1_djtih"]
+[ext_resource type="Texture2D" uid="uid://2d2odief05o5" path="res://art/little_bugger.png" id="2_rp2j6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dar1n"]
+atlas = ExtResource("2_rp2j6")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d6nfl"]
+atlas = ExtResource("2_rp2j6")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pt8y3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dar1n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d6nfl")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pt8y3"]
+radius = 8.0
+
+[node name="test level 2" type="Node2D" unique_id=334375110]
+
+[node name="TempAlienHand" type="Sprite2D" parent="." unique_id=1201717358]
+position = Vector2(179, 113)
+texture = ExtResource("1_djtih")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=528149660]
+
+[node name="bug" type="CharacterBody2D" parent="." unique_id=485411198]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="bug" unique_id=1501898862]
+sprite_frames = SubResource("SpriteFrames_pt8y3")
+frame_progress = 0.9441031
+
+[node name="Area2D" type="Area2D" parent="bug" unique_id=2038673184]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bug/Area2D" unique_id=406355874]
+shape = SubResource("CircleShape2D_pt8y3")
