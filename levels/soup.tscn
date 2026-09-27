@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cyv3qmfgrlmqi" path="res://ui/level_ui.tscn" id="3_nq6a4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ae8pp"]
-radius = 101.00495
+radius = 93.00538
 
 [node name="soup" type="Node2D" unique_id=1884918181]
 script = ExtResource("1_ae8pp")
@@ -26,3 +26,17 @@ texture = ExtResource("2_nq6a4")
 offset = Vector2(-26, 26)
 
 [node name="level_ui" parent="." unique_id=1951001217 instance=ExtResource("3_nq6a4")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=792609106]
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer" unique_id=766571205]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 38.0
+offset_top = -94.0
+offset_right = 57.0
+offset_bottom = 95.0
+grow_vertical = 2
+max_value = 3000.0
+fill_mode = 3

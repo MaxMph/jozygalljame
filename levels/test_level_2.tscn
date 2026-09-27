@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dcon1nh4f4kqm"]
 
-[ext_resource type="Script" uid="uid://cildlxxwggkwf" path="res://levels/test_level_2.gd" id="1_dar1n"]
+[ext_resource type="Script" uid="uid://cildlxxwggkwf" path="res://scripts/test_level_2.gd" id="1_dar1n"]
 [ext_resource type="Texture2D" uid="uid://dgbsrud3r3jsw" path="res://art/temp_alien_hand.png" id="1_djtih"]
 [ext_resource type="Script" uid="uid://c87tpmqmuksut" path="res://scripts/bug.gd" id="2_dar1n"]
 [ext_resource type="Texture2D" uid="uid://2d2odief05o5" path="res://art/little_bugger.png" id="2_rp2j6"]
@@ -57,6 +57,7 @@ far_corner = Vector2(360, 240)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="bug" unique_id=1501898862]
 sprite_frames = SubResource("SpriteFrames_pt8y3")
+autoplay = "default"
 frame_progress = 0.9441031
 
 [node name="Area2D" type="Area2D" parent="bug" unique_id=2038673184]
@@ -68,7 +69,5 @@ shape = SubResource("CircleShape2D_pt8y3")
 position = Vector2(480, 269)
 
 [node name="level_ui" parent="." unique_id=1951001217 instance=ExtResource("5_d6nfl")]
-offset_right = 480.0
-offset_bottom = 270.0
 
 [connection signal="area_entered" from="TempAlienHand/Area2D" to="." method="_on_area_2d_area_entered"]
