@@ -53,6 +53,7 @@ func win():
 	level_end()
 
 func lose():
+	timer_paused = true
 	$level_ui/lose_screen.show()
 	lose_life()
 	await get_tree().create_timer(0.6).timeout

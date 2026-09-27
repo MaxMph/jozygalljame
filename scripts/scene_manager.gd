@@ -2,10 +2,10 @@ extends Node
 
 var levels: Array = ["res://levels/soup.tscn", "res://levels/test_level_2.tscn"]
 
-var lives: int = 1
+var lives: int = 2
 
 var oldlevel: String
-var newlevel: String = "res://scripts/main_menu.gd"
+var newlevel: String = "res://ui/main_menu.tscn"
 
 func _ready() -> void:
 	pass
@@ -14,12 +14,12 @@ func _process(delta: float) -> void:
 	pass
 
 func next_level():
-	#if lives <= 0:
-		#newlevel = "res://scripts/main_menu.gd"
-	#else:
-		#newlevel = levels.pick_random()
-	#
-	newlevel = "res://scripts/main_menu.gd"
+	if lives <= 0:
+		newlevel = "res://ui/main_menu.tscn"
+	else:
+		newlevel = levels.pick_random()
+	
+	#newlevel = "res://scripts/main_menu.gd"
 	change_level()
 
 func change_level():

@@ -25,4 +25,5 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.get_parent().has_method("die"):
 		area.get_parent().die()
 		await get_tree().create_timer(0.5).timeout
-		$level_ui.win()
+		if $level_ui.timer_paused == false:
+			$level_ui.win()

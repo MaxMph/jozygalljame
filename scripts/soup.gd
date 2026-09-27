@@ -17,8 +17,9 @@ func _process(delta: float) -> void:
 	
 	if $CanvasLayer/ProgressBar.value >= $CanvasLayer/ProgressBar.max_value:
 	#if $CanvasLayer/ProgressBar.value >= spoon_dist and won == false:
-		$level_ui.win()
-		won = true
+		if $level_ui.timer_paused == false:
+			$level_ui.win()
+			won = true
 	
 		#print("works")
 	#print(get_local_mouse_position().distance_to($soup/CollisionShape2D.global_position))
