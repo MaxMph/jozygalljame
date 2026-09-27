@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://cyv3qmfgrlmqi"]
 
 [ext_resource type="Script" uid="uid://dt4fhlbh7esr4" path="res://scripts/level_ui.gd" id="1_pf3gj"]
+[ext_resource type="Texture2D" uid="uid://cnuwu7nfky1of" path="res://art/clock.png" id="2_k22hd"]
+[ext_resource type="FontFile" path="res://fonts/awesome9.ttf" id="3_font"]
 
 [sub_resource type="Animation" id="Animation_pf3gj"]
 length = 0.001
@@ -68,20 +70,18 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="timer" type="Label" parent="level_ui" unique_id=626030963]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = -30.0
-offset_right = 20.0
-offset_bottom = -6.999939
-grow_horizontal = 2
-grow_vertical = 0
+z_index = 1
+layout_mode = 0
+offset_left = 21.0
+offset_top = 228.0
+offset_right = 61.0
+offset_bottom = 248.0
+theme_override_colors/font_color = Color(0.231373, 0.0235294, 0.227451, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 16
 text = "0"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ColorRect" type="ColorRect" parent="level_ui" unique_id=666826793]
 z_index = 2
@@ -184,5 +184,9 @@ offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "You suck!"
+
+[node name="Clock" type="Sprite2D" parent="." unique_id=752078162]
+position = Vector2(41, 233)
+texture = ExtResource("2_k22hd")
 
 [connection signal="animation_finished" from="level_ui/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

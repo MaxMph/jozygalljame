@@ -1,9 +1,26 @@
 [gd_scene format=3 uid="uid://5idiqmot3qsh"]
 
 [ext_resource type="Script" uid="uid://c6mpiwj04t6wt" path="res://scripts/soup.gd" id="1_ae8pp"]
-[ext_resource type="Texture2D" uid="uid://bnqho5hcsehxd" path="res://art/soup (2).png" id="1_tqajj"]
-[ext_resource type="Texture2D" uid="uid://bpx5c08cf1qbt" path="res://art/soup (1).png" id="2_nq6a4"]
+[ext_resource type="Texture2D" uid="uid://bewjp4yjqqwec" path="res://art/soup-bg.png" id="2_k5jqb"]
+[ext_resource type="Texture2D" uid="uid://c5ofbjei2odkw" path="res://art/soup-pot.png" id="3_a1p2n"]
 [ext_resource type="PackedScene" uid="uid://cyv3qmfgrlmqi" path="res://ui/level_ui.tscn" id="3_nq6a4"]
+[ext_resource type="Texture2D" uid="uid://0kkevfnkg4i8" path="res://art/soup-spoon.png" id="4_0b6on"]
+[ext_resource type="Texture2D" uid="uid://dolkt0ivhsd7" path="res://art/soup-mask.png" id="6_mask"]
+[ext_resource type="Texture2D" uid="uid://ymkvf474fiqs" path="res://art/alien-hand-closed.png" id="7_hand"]
+[ext_resource type="Texture2D" path="res://art/soup-stuff/piece1-raw.png" id="stuff_1_raw"]
+[ext_resource type="Texture2D" path="res://art/soup-stuff/piece1-dark.png" id="stuff_1_dark"]
+[ext_resource type="Texture2D" path="res://art/soup-stuff/piece2-raw.png" id="stuff_2_raw"]
+[ext_resource type="Texture2D" path="res://art/soup-stuff/piece2-dark.png" id="stuff_2_dark"]
+[ext_resource type="Texture2D" path="res://art/soup-stuff/piece3-raw.png" id="stuff_3_raw"]
+[ext_resource type="Texture2D" path="res://art/soup-stuff/piece3-dark.png" id="stuff_3_dark"]
+[ext_resource type="Texture2D" path="res://art/soup-stuff/piece4-raw.png" id="stuff_4_raw"]
+[ext_resource type="Texture2D" path="res://art/soup-stuff/piece4-dark.png" id="stuff_4_dark"]
+[ext_resource type="Texture2D" path="res://art/soup-stuff/piece5-raw.png" id="stuff_5_raw"]
+[ext_resource type="Texture2D" path="res://art/soup-stuff/piece5-dark.png" id="stuff_5_dark"]
+[ext_resource type="Texture2D" path="res://art/soup-stuff/piece6-raw.png" id="stuff_6_raw"]
+[ext_resource type="Texture2D" path="res://art/soup-stuff/piece6-dark.png" id="stuff_6_dark"]
+[ext_resource type="Texture2D" path="res://art/soup-stuff/piece7-raw.png" id="stuff_7_raw"]
+[ext_resource type="Texture2D" path="res://art/soup-stuff/piece7-dark.png" id="stuff_7_dark"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ae8pp"]
 radius = 93.00538
@@ -11,18 +28,25 @@ radius = 93.00538
 [node name="soup" type="Node2D" unique_id=1884918181]
 script = ExtResource("1_ae8pp")
 
-[node name="soup" type="Sprite2D" parent="." unique_id=1030331123]
+[node name="SoupBg" type="Sprite2D" parent="." unique_id=1366305398]
+texture_repeat = 2
 position = Vector2(240, 135)
-texture = ExtResource("1_tqajj")
+texture = ExtResource("2_k5jqb")
+region_enabled = true
+region_rect = Rect2(0, 0, 600, 600)
+
+[node name="soup" type="Sprite2D" parent="." unique_id=1030331123]
+texture = ExtResource("3_a1p2n")
+centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="soup" unique_id=141022729]
-position = Vector2(-8, -1)
+position = Vector2(229, 134)
 shape = SubResource("CircleShape2D_ae8pp")
 disabled = true
 
 [node name="spoon" type="Sprite2D" parent="." unique_id=1346102378]
 position = Vector2(244, 123)
-texture = ExtResource("2_nq6a4")
+texture = ExtResource("4_0b6on")
 offset = Vector2(-26, 26)
 
 [node name="level_ui" parent="." unique_id=1951001217 instance=ExtResource("3_nq6a4")]
@@ -30,6 +54,7 @@ offset = Vector2(-26, 26)
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=792609106]
 
 [node name="ProgressBar" type="ProgressBar" parent="CanvasLayer" unique_id=766571205]
+visible = false
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
@@ -40,3 +65,132 @@ offset_bottom = 95.0
 grow_vertical = 2
 max_value = 3000.0
 fill_mode = 3
+
+[node name="SoupStuff" type="Node2D" parent="." unique_id=2042892078]
+
+[node name="Light" type="Node2D" parent="SoupStuff" unique_id=1837261011]
+
+[node name="P1" type="Node2D" parent="SoupStuff/Light" unique_id=183800010]
+position = Vector2(229, 134)
+
+[node name="Sprite" type="Sprite2D" parent="SoupStuff/Light/P1" unique_id=183900010]
+position = Vector2(-42, -64)
+texture = ExtResource("stuff_1_raw")
+centered = false
+
+[node name="P2" type="Node2D" parent="SoupStuff/Light" unique_id=183800020]
+position = Vector2(229, 134)
+
+[node name="Sprite" type="Sprite2D" parent="SoupStuff/Light/P2" unique_id=183900020]
+position = Vector2(30, -62)
+texture = ExtResource("stuff_2_raw")
+centered = false
+
+[node name="P3" type="Node2D" parent="SoupStuff/Light" unique_id=183800030]
+position = Vector2(229, 134)
+
+[node name="Sprite" type="Sprite2D" parent="SoupStuff/Light/P3" unique_id=183900030]
+position = Vector2(-81, -50)
+texture = ExtResource("stuff_3_raw")
+centered = false
+
+[node name="P4" type="Node2D" parent="SoupStuff/Light" unique_id=183800040]
+position = Vector2(229, 134)
+
+[node name="Sprite" type="Sprite2D" parent="SoupStuff/Light/P4" unique_id=183900040]
+position = Vector2(56, -31)
+texture = ExtResource("stuff_4_raw")
+centered = false
+
+[node name="P5" type="Node2D" parent="SoupStuff/Light" unique_id=183800050]
+position = Vector2(229, 134)
+
+[node name="Sprite" type="Sprite2D" parent="SoupStuff/Light/P5" unique_id=183900050]
+position = Vector2(0, -6)
+texture = ExtResource("stuff_5_raw")
+centered = false
+
+[node name="P6" type="Node2D" parent="SoupStuff/Light" unique_id=183800060]
+position = Vector2(229, 134)
+
+[node name="Sprite" type="Sprite2D" parent="SoupStuff/Light/P6" unique_id=183900060]
+position = Vector2(-20, 9)
+texture = ExtResource("stuff_6_raw")
+centered = false
+
+[node name="P7" type="Node2D" parent="SoupStuff/Light" unique_id=183800070]
+position = Vector2(229, 134)
+
+[node name="Sprite" type="Sprite2D" parent="SoupStuff/Light/P7" unique_id=183900070]
+position = Vector2(-49, 20)
+texture = ExtResource("stuff_7_raw")
+centered = false
+
+[node name="Mask" type="Sprite2D" parent="SoupStuff" unique_id=1837261013]
+clip_children = 1
+texture = ExtResource("6_mask")
+centered = false
+
+[node name="Dark" type="Node2D" parent="SoupStuff/Mask" unique_id=1837261014]
+
+[node name="P1" type="Node2D" parent="SoupStuff/Mask/Dark" unique_id=183800011]
+position = Vector2(229, 134)
+
+[node name="Sprite" type="Sprite2D" parent="SoupStuff/Mask/Dark/P1" unique_id=183900011]
+position = Vector2(-42, -64)
+texture = ExtResource("stuff_1_dark")
+centered = false
+
+[node name="P2" type="Node2D" parent="SoupStuff/Mask/Dark" unique_id=183800021]
+position = Vector2(229, 134)
+
+[node name="Sprite" type="Sprite2D" parent="SoupStuff/Mask/Dark/P2" unique_id=183900021]
+position = Vector2(30, -62)
+texture = ExtResource("stuff_2_dark")
+centered = false
+
+[node name="P3" type="Node2D" parent="SoupStuff/Mask/Dark" unique_id=183800031]
+position = Vector2(229, 134)
+
+[node name="Sprite" type="Sprite2D" parent="SoupStuff/Mask/Dark/P3" unique_id=183900031]
+position = Vector2(-81, -50)
+texture = ExtResource("stuff_3_dark")
+centered = false
+
+[node name="P4" type="Node2D" parent="SoupStuff/Mask/Dark" unique_id=183800041]
+position = Vector2(229, 134)
+
+[node name="Sprite" type="Sprite2D" parent="SoupStuff/Mask/Dark/P4" unique_id=183900041]
+position = Vector2(56, -31)
+texture = ExtResource("stuff_4_dark")
+centered = false
+
+[node name="P5" type="Node2D" parent="SoupStuff/Mask/Dark" unique_id=183800051]
+position = Vector2(229, 134)
+
+[node name="Sprite" type="Sprite2D" parent="SoupStuff/Mask/Dark/P5" unique_id=183900051]
+position = Vector2(0, -6)
+texture = ExtResource("stuff_5_dark")
+centered = false
+
+[node name="P6" type="Node2D" parent="SoupStuff/Mask/Dark" unique_id=183800061]
+position = Vector2(229, 134)
+
+[node name="Sprite" type="Sprite2D" parent="SoupStuff/Mask/Dark/P6" unique_id=183900061]
+position = Vector2(-20, 9)
+texture = ExtResource("stuff_6_dark")
+centered = false
+
+[node name="P7" type="Node2D" parent="SoupStuff/Mask/Dark" unique_id=183800071]
+position = Vector2(229, 134)
+
+[node name="Sprite" type="Sprite2D" parent="SoupStuff/Mask/Dark/P7" unique_id=183900071]
+position = Vector2(-49, 20)
+texture = ExtResource("stuff_7_dark")
+centered = false
+
+[node name="hand" type="Sprite2D" parent="." unique_id=1592837465]
+visible = false
+z_index = 10
+texture = ExtResource("7_hand")
+centered = false

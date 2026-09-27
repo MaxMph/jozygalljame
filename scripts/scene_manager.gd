@@ -1,6 +1,6 @@
 extends Node
 
-var levels: Array = ["res://levels/soup.tscn", "res://levels/test_level_2.tscn"]
+var levels: Array = ["res://levels/apples.tscn"]
 
 var lives: int = 2
 

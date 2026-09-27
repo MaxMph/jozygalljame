@@ -1,0 +1,64 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/apples.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://bbpclm7kwl7jw" path="res://art/apple-sky.png" id="2_sky"]
+[ext_resource type="Texture2D" uid="uid://c4cg5j5oai86i" path="res://art/apple-branch.png" id="3_branch"]
+[ext_resource type="Texture2D" uid="uid://b667qhr510w1g" path="res://art/apple-leaves.png" id="4_leaves"]
+[ext_resource type="PackedScene" uid="uid://cyv3qmfgrlmqi" path="res://ui/level_ui.tscn" id="5_ui"]
+[ext_resource type="Texture2D" uid="uid://cw71o5ivrkm4u" path="res://art/barrel-botom.png" id="6_barrel_back"]
+[ext_resource type="Texture2D" uid="uid://c6xv1dnlkjc0b" path="res://art/barrel-top.png" id="7_barrel_front"]
+
+[node name="apples" type="Node2D"]
+script = ExtResource("1_script")
+
+[node name="Sky" type="Sprite2D" parent="."]
+texture = ExtResource("2_sky")
+centered = false
+
+[node name="Branch" type="Sprite2D" parent="."]
+texture = ExtResource("3_branch")
+centered = false
+
+[node name="Leaves" type="Sprite2D" parent="."]
+texture = ExtResource("4_leaves")
+centered = false
+
+[node name="Spawns" type="Node2D" parent="."]
+
+[node name="S1" type="Marker2D" parent="Spawns"]
+position = Vector2(70, 112)
+
+[node name="S2" type="Marker2D" parent="Spawns"]
+position = Vector2(135, 140)
+
+[node name="S3" type="Marker2D" parent="Spawns"]
+position = Vector2(200, 100)
+
+[node name="S4" type="Marker2D" parent="Spawns"]
+position = Vector2(255, 155)
+
+[node name="S5" type="Marker2D" parent="Spawns"]
+position = Vector2(300, 60)
+
+[node name="S6" type="Marker2D" parent="Spawns"]
+position = Vector2(340, 185)
+
+[node name="S7" type="Marker2D" parent="Spawns"]
+position = Vector2(395, 150)
+
+[node name="S8" type="Marker2D" parent="Spawns"]
+position = Vector2(440, 100)
+
+[node name="BarrelBack" type="Sprite2D" parent="."]
+position = Vector2(64, 0)
+texture = ExtResource("7_barrel_front")
+centered = false
+
+[node name="Apples" type="Node2D" parent="."]
+
+[node name="BarrelFront" type="Sprite2D" parent="."]
+position = Vector2(64, 0)
+texture = ExtResource("6_barrel_back")
+centered = false
+
+[node name="level_ui" parent="." instance=ExtResource("5_ui")]

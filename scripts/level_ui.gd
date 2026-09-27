@@ -24,7 +24,7 @@ func _process(delta: float) -> void:
 				lose()
 	else:
 		timerLength -= delta
-		$level_ui/timer.text = str(ceil(timerLength))
+		$level_ui/timer.text = str(ceili(timerLength))
 
 func level_end():
 	#print(timerLength)
