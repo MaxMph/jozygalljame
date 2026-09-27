@@ -1,0 +1,206 @@
+[gd_scene format=3 uid="uid://ciq3jd5acpevw"]
+
+[ext_resource type="Script" uid="uid://dukott5pabk5q" path="res://scripts/knittings.gd" id="1_1fup4"]
+[ext_resource type="Texture2D" uid="uid://d03acuub7d4o4" path="res://art/knitting-bg.png" id="1_757w6"]
+[ext_resource type="Texture2D" uid="uid://dhjv501thd72m" path="res://art/knitting-stuff.png" id="2_bggfu"]
+[ext_resource type="Texture2D" uid="uid://bwh5toxicm8pg" path="res://art/knitting p1.png" id="3_gx10f"]
+[ext_resource type="Texture2D" uid="uid://cx4hiot3o6inl" path="res://art/knitting p2.png" id="4_1fup4"]
+[ext_resource type="Texture2D" uid="uid://badmubwsqrlxp" path="res://art/knitting p3.png" id="5_2cogr"]
+[ext_resource type="PackedScene" uid="uid://cyv3qmfgrlmqi" path="res://ui/level_ui.tscn" id="7_2cogr"]
+
+[sub_resource type="Animation" id="Animation_2cogr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("KnittingP1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(243, 134)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("KnittingP2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(252, 122)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("KnittingP1:z_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("KnittingP2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_70c28"]
+resource_name = "p1"
+length = 0.08
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("KnittingP1:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.04, 0.08),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(243, 134), Vector2(227, 151), Vector2(204, 148)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("KnittingP2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.04075222, 0.08),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(252, 122), Vector2(254, 142), Vector2(243, 155)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("KnittingP1:z_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("KnittingP2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.08),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.08726646]
+}
+
+[sub_resource type="Animation" id="Animation_bggfu"]
+resource_name = "p2"
+length = 0.16
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("KnittingP1:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(204, 148), Vector2(243, 134)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("KnittingP2:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.08, 0.16),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(258, 145), Vector2(294, 121), Vector2(252, 122)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("KnittingP1:z_index")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("KnittingP2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.08726646, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ql4m0"]
+_data = {
+&"RESET": SubResource("Animation_2cogr"),
+&"p1": SubResource("Animation_70c28"),
+&"p2": SubResource("Animation_bggfu")
+}
+
+[node name="knittings" type="Node2D" unique_id=1066978161]
+script = ExtResource("1_1fup4")
+
+[node name="KnittingStuff" type="Sprite2D" parent="." unique_id=1715221012]
+visible = false
+position = Vector2(239, 134)
+texture = ExtResource("2_bggfu")
+
+[node name="KnittingP1" type="Sprite2D" parent="." unique_id=1957770689]
+z_index = 1
+position = Vector2(243, 134)
+texture = ExtResource("3_gx10f")
+
+[node name="KnittingP2" type="Sprite2D" parent="." unique_id=2034799643]
+position = Vector2(252, 122)
+texture = ExtResource("4_1fup4")
+
+[node name="KnittingP3" type="Sprite2D" parent="." unique_id=1713164381]
+z_index = 2
+position = Vector2(240, 145)
+texture = ExtResource("5_2cogr")
+
+[node name="KnittingBg" type="Sprite2D" parent="." unique_id=572022548]
+z_index = -1
+position = Vector2(240, 135)
+texture = ExtResource("1_757w6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1641707000]
+libraries/ = SubResource("AnimationLibrary_ql4m0")
+speed_scale = 1.8
+
+[node name="level_ui" parent="." unique_id=1036234411 instance=ExtResource("7_2cogr")]

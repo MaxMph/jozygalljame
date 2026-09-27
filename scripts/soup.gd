@@ -17,7 +17,7 @@ func _ready() -> void:
 	last_spoon_pos = $spoon.global_position
 	piece_targets.resize($SoupStuff/Light.get_child_count())
 	piece_targets.fill(0.0)
-	print("[soup] ready, spoon at ", $spoon.global_position, " pot center ", $soup/CollisionShape2D.global_position, " radius ", $soup/CollisionShape2D.shape.radius)
+	#print("[soup] ready, spoon at ", $spoon.global_position, " pot center ", $soup/CollisionShape2D.global_position, " radius ", $soup/CollisionShape2D.shape.radius)
 
 func _exit_tree() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE

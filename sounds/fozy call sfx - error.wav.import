@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dhk167jw2vrrm"
+path="res://.godot/imported/fozy call sfx - error.wav-d94146732e2f020336bb2c6c54d3824f.sample"
+
+[deps]
+
+source_file="res://sounds/fozy call sfx - error.wav"
+dest_files=["res://.godot/imported/fozy call sfx - error.wav-d94146732e2f020336bb2c6c54d3824f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

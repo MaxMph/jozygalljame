@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://trke6v6h8umt"]
+
+[ext_resource type="Script" uid="uid://bv5yhtp1yi5od" path="res://audio_manager.gd" id="1_jisk1"]
+[ext_resource type="AudioStream" uid="uid://byft1s2rljui8" path="res://sounds/fozy call - menuloop.wav" id="2_bq1v2"]
+[ext_resource type="AudioStream" uid="uid://bqfobc250ylos" path="res://sounds/fozy call main.wav" id="3_fckgx"]
+[ext_resource type="AudioStream" uid="uid://dhk167jw2vrrm" path="res://sounds/fozy call sfx - error.wav" id="3_nhx87"]
+[ext_resource type="AudioStream" uid="uid://c7p7ngpaaxl7y" path="res://sounds/fozy call sfx - level complete.wav" id="4_l2k84"]
+[ext_resource type="AudioStream" uid="uid://ccrnih4tl4w67" path="res://sounds/fozy call sfx - next round.wav" id="5_l55mp"]
+[ext_resource type="AudioStream" uid="uid://yh1jchhi5mkm" path="res://sounds/fozy call sfx - applepluck1.wav" id="6_v0gdi"]
+[ext_resource type="AudioStream" uid="uid://dfg5mnso8lmpl" path="res://sounds/fozy call sfx - applepluck2.wav" id="7_7fh0q"]
+[ext_resource type="AudioStream" uid="uid://ddmc8ks47tuh8" path="res://sounds/fozy call sfx - applepluck3.wav" id="8_op7ad"]
+[ext_resource type="AudioStream" uid="uid://djcmkyin0845v" path="res://sounds/fozy call sfx - clocktick1.wav" id="9_wby2p"]
+[ext_resource type="AudioStream" uid="uid://lsm3dbrfkoss" path="res://sounds/fozy call sfx - clocktick2.wav" id="10_14skr"]
+[ext_resource type="AudioStream" uid="uid://c1a0xokflglyg" path="res://sounds/fozy call sfx - game start noise.wav" id="11_k4pvn"]
+[ext_resource type="AudioStream" uid="uid://kb0m60hfkipf" path="res://sounds/fozy call sfx - soupstir.wav" id="13_86pii"]
+[ext_resource type="AudioStream" uid="uid://dhuflxd1g40ms" path="res://sounds/fozy call sfx - speed up.wav" id="14_mfnxe"]
+
+[node name="audio_manager" type="Node" unique_id=1832936770]
+script = ExtResource("1_jisk1")
+
+[node name="menue_music_slow" type="AudioStreamPlayer" parent="." unique_id=516490103]
+stream = ExtResource("2_bq1v2")
+volume_db = -18.245
+autoplay = true
+
+[node name="music_slow" type="AudioStreamPlayer" parent="." unique_id=1123312494]
+stream = ExtResource("3_fckgx")
+volume_db = -18.245
+
+[node name="lose" type="AudioStreamPlayer" parent="." unique_id=1083473213]
+stream = ExtResource("3_nhx87")
+
+[node name="win" type="AudioStreamPlayer" parent="." unique_id=1589732053]
+stream = ExtResource("4_l2k84")
+max_polyphony = 2
+
+[node name="next_round" type="AudioStreamPlayer" parent="." unique_id=840383361]
+stream = ExtResource("5_l55mp")
+
+[node name="game_start" type="AudioStreamPlayer" parent="." unique_id=1726088069]
+stream = ExtResource("11_k4pvn")
+
+[node name="applepluck1" type="AudioStreamPlayer" parent="." unique_id=751675355]
+stream = ExtResource("6_v0gdi")
+volume_db = -10.0
+
+[node name="applepluck2" type="AudioStreamPlayer" parent="." unique_id=474871703]
+stream = ExtResource("7_7fh0q")
+volume_db = -10.0
+
+[node name="applepluck3" type="AudioStreamPlayer" parent="." unique_id=1284791851]
+stream = ExtResource("8_op7ad")
+volume_db = -10.0
+
+[node name="clock1" type="AudioStreamPlayer" parent="." unique_id=910640208]
+stream = ExtResource("9_wby2p")
+
+[node name="clock2" type="AudioStreamPlayer" parent="." unique_id=1286357341]
+stream = ExtResource("10_14skr")
+
+[node name="soup_stir" type="AudioStreamPlayer" parent="." unique_id=1194887397]
+stream = ExtResource("13_86pii")
+
+[node name="speed_up" type="AudioStreamPlayer" parent="." unique_id=1504996050]
+stream = ExtResource("14_mfnxe")

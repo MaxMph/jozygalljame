@@ -46,4 +46,5 @@ func _process(delta: float) -> void:
 		state = State.LANDED
 
 func hit(point: Vector2, radius: float) -> bool:
+	AudioManager.play_sound("applepluck" + str(randi_range(1,3)))
 	return is_pixel_opaque(to_local(point)) or point.distance_to(global_position) <= radius

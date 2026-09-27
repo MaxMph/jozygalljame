@@ -5,7 +5,8 @@ extends Node
 var timer_paused = false
 
 func _ready() -> void:
-	$level_ui/AnimationPlayer.play("fade in")
+	$AnimationPlayer.play("fade_in")
+	#$level_ui/AnimationPlayer.play("fade in")
 	var count = 0
 	for i in $level_ui/HBoxContainer.get_children():
 		if count <= SceneManager.lives - 1:
@@ -29,8 +30,8 @@ func _process(delta: float) -> void:
 func level_end():
 	#print(timerLength)
 	#if $level_ui/AnimationPlayer.is_playing() == false:
-	if $level_ui/AnimationPlayer.current_animation != "fade_out":
-		$level_ui/AnimationPlayer.play("fade_out")
+	if $AnimationPlayer.current_animation != "fade_out":
+		$AnimationPlayer.play("fade_out")
 		#await $level_ui/AnimationPlayer.animation_finished
 		##get_tree().change_scene_to_file()
 		#get_tree().reload_current_scene()
@@ -46,6 +47,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		SceneManager.next_level()
 
 func win():
+	AudioManager.play_sound("win")
 	timer_paused = true
 	$level_ui/win_screen.show()
 	await get_tree().create_timer(0.6).timeout
@@ -53,6 +55,8 @@ func win():
 	level_end()
 
 func lose():
+	AudioManager.play_sound("lose")
+	#AudioManager.lose.play()
 	timer_paused = true
 	$level_ui/lose_screen.show()
 	lose_life()
@@ -67,5 +71,5 @@ func lose_life():
 			break
 			#make animation for losing heart
 	SceneManager.lives -= 1
-	print(SceneManager.lives)
+	#print(SceneManager.lives)
 	

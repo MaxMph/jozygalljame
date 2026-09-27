@@ -7,23 +7,63 @@
 [ext_resource type="Texture2D" uid="uid://0kkevfnkg4i8" path="res://art/soup-spoon.png" id="4_0b6on"]
 [ext_resource type="Texture2D" uid="uid://dolkt0ivhsd7" path="res://art/soup-mask.png" id="6_mask"]
 [ext_resource type="Texture2D" uid="uid://ymkvf474fiqs" path="res://art/alien-hand-closed.png" id="7_hand"]
-[ext_resource type="Texture2D" path="res://art/soup-stuff/piece1-raw.png" id="stuff_1_raw"]
-[ext_resource type="Texture2D" path="res://art/soup-stuff/piece1-dark.png" id="stuff_1_dark"]
-[ext_resource type="Texture2D" path="res://art/soup-stuff/piece2-raw.png" id="stuff_2_raw"]
-[ext_resource type="Texture2D" path="res://art/soup-stuff/piece2-dark.png" id="stuff_2_dark"]
-[ext_resource type="Texture2D" path="res://art/soup-stuff/piece3-raw.png" id="stuff_3_raw"]
-[ext_resource type="Texture2D" path="res://art/soup-stuff/piece3-dark.png" id="stuff_3_dark"]
-[ext_resource type="Texture2D" path="res://art/soup-stuff/piece4-raw.png" id="stuff_4_raw"]
-[ext_resource type="Texture2D" path="res://art/soup-stuff/piece4-dark.png" id="stuff_4_dark"]
-[ext_resource type="Texture2D" path="res://art/soup-stuff/piece5-raw.png" id="stuff_5_raw"]
-[ext_resource type="Texture2D" path="res://art/soup-stuff/piece5-dark.png" id="stuff_5_dark"]
-[ext_resource type="Texture2D" path="res://art/soup-stuff/piece6-raw.png" id="stuff_6_raw"]
-[ext_resource type="Texture2D" path="res://art/soup-stuff/piece6-dark.png" id="stuff_6_dark"]
-[ext_resource type="Texture2D" path="res://art/soup-stuff/piece7-raw.png" id="stuff_7_raw"]
-[ext_resource type="Texture2D" path="res://art/soup-stuff/piece7-dark.png" id="stuff_7_dark"]
+[ext_resource type="Texture2D" uid="uid://jyxcn2u2x8eb" path="res://art/mouse move.png" id="22_abn6h"]
+[ext_resource type="Texture2D" uid="uid://ch656y0pvd5ef" path="res://art/soup-stuff/piece1-dark.png" id="stuff_1_dark"]
+[ext_resource type="Texture2D" uid="uid://o2vpoc6jfvdn" path="res://art/soup-stuff/piece1-raw.png" id="stuff_1_raw"]
+[ext_resource type="Texture2D" uid="uid://cjpwogm878pti" path="res://art/soup-stuff/piece2-dark.png" id="stuff_2_dark"]
+[ext_resource type="Texture2D" uid="uid://b3cwtwwnieemo" path="res://art/soup-stuff/piece2-raw.png" id="stuff_2_raw"]
+[ext_resource type="Texture2D" uid="uid://dm0ok6dukq4m5" path="res://art/soup-stuff/piece3-dark.png" id="stuff_3_dark"]
+[ext_resource type="Texture2D" uid="uid://disbj6ietmd3u" path="res://art/soup-stuff/piece3-raw.png" id="stuff_3_raw"]
+[ext_resource type="Texture2D" uid="uid://bmxcvbkywy8it" path="res://art/soup-stuff/piece4-dark.png" id="stuff_4_dark"]
+[ext_resource type="Texture2D" uid="uid://b7868ektixv5v" path="res://art/soup-stuff/piece4-raw.png" id="stuff_4_raw"]
+[ext_resource type="Texture2D" uid="uid://dc0y3eof3hhpn" path="res://art/soup-stuff/piece5-dark.png" id="stuff_5_dark"]
+[ext_resource type="Texture2D" uid="uid://c488pgq4inhww" path="res://art/soup-stuff/piece5-raw.png" id="stuff_5_raw"]
+[ext_resource type="Texture2D" uid="uid://dhql4gbt7odu7" path="res://art/soup-stuff/piece6-dark.png" id="stuff_6_dark"]
+[ext_resource type="Texture2D" uid="uid://bvrqckvicxge6" path="res://art/soup-stuff/piece6-raw.png" id="stuff_6_raw"]
+[ext_resource type="Texture2D" uid="uid://ck1hggk15mgfo" path="res://art/soup-stuff/piece7-dark.png" id="stuff_7_dark"]
+[ext_resource type="Texture2D" uid="uid://b5l0psk28xynd" path="res://art/soup-stuff/piece7-raw.png" id="stuff_7_raw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ae8pp"]
 radius = 93.00538
+
+[sub_resource type="Animation" id="Animation_abn6h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(427, 222)]
+}
+
+[sub_resource type="Animation" id="Animation_1i0d7"]
+resource_name = "move"
+length = 0.6
+loop_mode = 1
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(427, 222), Vector2(434.37, 217.985), Vector2(427, 210.67), Vector2(418.46, 217.985)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6j5rl"]
+_data = {
+&"RESET": SubResource("Animation_abn6h"),
+&"move": SubResource("Animation_1i0d7")
+}
 
 [node name="soup" type="Node2D" unique_id=1884918181]
 script = ExtResource("1_ae8pp")
@@ -194,3 +234,11 @@ visible = false
 z_index = 10
 texture = ExtResource("7_hand")
 centered = false
+
+[node name="MouseMove" type="Sprite2D" parent="." unique_id=112026785]
+position = Vector2(427, 222)
+texture = ExtResource("22_abn6h")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MouseMove" unique_id=2014633080]
+libraries/ = SubResource("AnimationLibrary_6j5rl")
+autoplay = &"move"

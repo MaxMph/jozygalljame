@@ -19,12 +19,14 @@ config/icon="res://icon.svg"
 
 Global="*uid://c0xyjchsyeigq"
 SceneManager="*uid://b0k8j2frp7xwp"
+AudioManager="*uid://trke6v6h8umt"
 
 [display]
 
 window/size/viewport_width=480
 window/size/viewport_height=270
 window/stretch/mode="viewport"
+window/stretch/aspect="keep_height"
 
 [input]
 
