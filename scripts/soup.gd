@@ -31,6 +31,7 @@ func _input(event: InputEvent) -> void:
 		print("[soup] click pressed=", event.pressed, " mouse=", mouse, " spoon_local=", local, " dist=", dist, " on_spoon=", on_spoon, " grabbed=", grabbed)
 		if event.pressed and not grabbed and on_spoon:
 			grabbed = true
+			AudioManager.play_sound("stir_soup")
 			grab_offset = mouse - $spoon.global_position
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 			$hand.visible = true
@@ -38,6 +39,7 @@ func _input(event: InputEvent) -> void:
 			print("[soup] grabbed spoon, mouse captured")
 		elif not event.pressed and grabbed:
 			grabbed = false
+			AudioManager.stop_sound("stir_soup")
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 			$hand.visible = false
 			get_viewport().warp_mouse($spoon.global_position + grab_offset)
@@ -66,6 +68,10 @@ func _process(delta: float) -> void:
 	$SoupBg.rotation_degrees -= bg_rotate_speed * delta
 
 	spoon_dist += last_spoon_pos.distance_to($spoon.global_position)
+	#if last_spoon_pos.distance_to($spoon.global_position) > 1:
+		#AudioManager.unpause_sound("stir_soup")
+	#else:
+		#AudioManager.pause_sound("stir_soup")
 	last_spoon_pos = $spoon.global_position
 	$CanvasLayer/ProgressBar.value = spoon_dist
 
