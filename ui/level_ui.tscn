@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://cyv3qmfgrlmqi"]
+
+[ext_resource type="Script" uid="uid://dt4fhlbh7esr4" path="res://ui/level_ui.gd" id="1_pf3gj"]
+
+[sub_resource type="Animation" id="Animation_pf3gj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(747, -207)]
+}
+
+[sub_resource type="Animation" id="Animation_k22hd"]
+resource_name = "fade in"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(54.000004, -306), Vector2(-643, -325)]
+}
+
+[sub_resource type="Animation" id="Animation_utfi2"]
+resource_name = "fade_out"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(747, -207), Vector2(77.59, -207)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mghd1"]
+_data = {
+&"RESET": SubResource("Animation_pf3gj"),
+&"fade in": SubResource("Animation_k22hd"),
+&"fade_out": SubResource("Animation_utfi2")
+}
+
+[node name="level_ui" type="CanvasLayer" unique_id=1036234411]
+
+[node name="level_ui" type="Control" parent="." unique_id=1951001217]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pf3gj")
+
+[node name="timer" type="Label" parent="level_ui" unique_id=626030963]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -30.0
+offset_right = 20.0
+offset_bottom = -6.999939
+grow_horizontal = 2
+grow_vertical = 0
+text = "0"
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="level_ui" unique_id=666826793]
+z_index = 2
+layout_mode = 0
+offset_left = 747.0
+offset_top = -207.0
+offset_right = 1431.9991
+offset_bottom = 424.1328
+rotation = 0.43982297
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="level_ui" unique_id=1657959118]
+libraries/ = SubResource("AnimationLibrary_mghd1")
+
+[connection signal="animation_finished" from="level_ui/AnimationPlayer" to="level_ui" method="_on_animation_player_animation_finished"]

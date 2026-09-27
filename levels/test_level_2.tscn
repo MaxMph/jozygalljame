@@ -1,7 +1,13 @@
 [gd_scene format=3 uid="uid://dcon1nh4f4kqm"]
 
+[ext_resource type="Script" uid="uid://cildlxxwggkwf" path="res://levels/test_level_2.gd" id="1_dar1n"]
 [ext_resource type="Texture2D" uid="uid://dgbsrud3r3jsw" path="res://art/temp_alien_hand.png" id="1_djtih"]
+[ext_resource type="Script" uid="uid://c87tpmqmuksut" path="res://scripts/bug.gd" id="2_dar1n"]
 [ext_resource type="Texture2D" uid="uid://2d2odief05o5" path="res://art/little_bugger.png" id="2_rp2j6"]
+[ext_resource type="PackedScene" uid="uid://cyv3qmfgrlmqi" path="res://ui/level_ui.tscn" id="5_d6nfl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pjj2y"]
+radius = 25.96151
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dar1n"]
 atlas = ExtResource("2_rp2j6")
@@ -29,14 +35,25 @@ animations = [{
 radius = 8.0
 
 [node name="test level 2" type="Node2D" unique_id=334375110]
+script = ExtResource("1_dar1n")
 
 [node name="TempAlienHand" type="Sprite2D" parent="." unique_id=1201717358]
+z_index = 1
 position = Vector2(179, 113)
 texture = ExtResource("1_djtih")
+offset = Vector2(3.965, -5.415)
+
+[node name="Area2D" type="Area2D" parent="TempAlienHand" unique_id=1813262442]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TempAlienHand/Area2D" unique_id=270278242]
+shape = SubResource("CircleShape2D_pjj2y")
+disabled = true
 
 [node name="Node2D" type="Node2D" parent="." unique_id=528149660]
 
-[node name="bug" type="CharacterBody2D" parent="." unique_id=485411198]
+[node name="bug" type="Node2D" parent="." unique_id=42526192]
+script = ExtResource("2_dar1n")
+far_corner = Vector2(360, 240)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="bug" unique_id=1501898862]
 sprite_frames = SubResource("SpriteFrames_pt8y3")
@@ -46,3 +63,12 @@ frame_progress = 0.9441031
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bug/Area2D" unique_id=406355874]
 shape = SubResource("CircleShape2D_pt8y3")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=710426469]
+position = Vector2(480, 269)
+
+[node name="level_ui" parent="." unique_id=1951001217 instance=ExtResource("5_d6nfl")]
+offset_right = 480.0
+offset_bottom = 270.0
+
+[connection signal="area_entered" from="TempAlienHand/Area2D" to="." method="_on_area_2d_area_entered"]

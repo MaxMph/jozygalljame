@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://5idiqmot3qsh"]
+
+[ext_resource type="Script" uid="uid://c6mpiwj04t6wt" path="res://scripts/soup.gd" id="1_ae8pp"]
+[ext_resource type="Texture2D" uid="uid://bnqho5hcsehxd" path="res://art/soup (2).png" id="1_tqajj"]
+[ext_resource type="Texture2D" uid="uid://bpx5c08cf1qbt" path="res://art/soup (1).png" id="2_nq6a4"]
+[ext_resource type="PackedScene" uid="uid://cyv3qmfgrlmqi" path="res://ui/level_ui.tscn" id="3_nq6a4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ae8pp"]
+radius = 101.00495
+
+[node name="soup" type="Node2D" unique_id=1884918181]
+script = ExtResource("1_ae8pp")
+
+[node name="soup" type="Sprite2D" parent="." unique_id=1030331123]
+position = Vector2(240, 135)
+texture = ExtResource("1_tqajj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="soup" unique_id=141022729]
+position = Vector2(-8, -1)
+shape = SubResource("CircleShape2D_ae8pp")
+disabled = true
+
+[node name="spoon" type="Sprite2D" parent="." unique_id=1346102378]
+position = Vector2(244, 123)
+texture = ExtResource("2_nq6a4")
+offset = Vector2(-26, 26)
+
+[node name="level_ui" parent="." unique_id=1951001217 instance=ExtResource("3_nq6a4")]
